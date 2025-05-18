@@ -1,58 +1,59 @@
 import React from "react";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import { motion } from "framer-motion";
-
-import "react-vertical-timeline-component/style.min.css";
+import { motion } from "motion/react";
 
 import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { textVariant } from "../utils/motion";
+import { textVariant, fadeIn } from "../utils/motion";
 
-const ExperienceCard = ({ experience }) => {
+const ExperienceCard = ({ experience, index }) => {
   return (
-    <VerticalTimelineElement
-      contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
-      }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-      date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
-      icon={
-        <div className='flex justify-center items-center w-full h-full'>
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.3, 0.75)}
+      className='relative flex flex-col sm:flex-row gap-6 sm:gap-10'
+    >
+      <div className='absolute left-[19px] sm:left-[140px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#915EFF] to-transparent' />
+
+      <div className='hidden sm:flex w-[120px] flex-shrink-0 pt-1 justify-end'>
+        <span className='text-secondary text-[14px] font-medium text-right'>
+          {experience.date}
+        </span>
+      </div>
+
+      <div className='relative flex-shrink-0'>
+        <div
+          className='w-10 h-10 rounded-full flex items-center justify-center border-2 border-[#915EFF] z-10 relative'
+          style={{ background: experience.iconBg }}
+        >
           <img
             src={experience.icon}
             alt={experience.company_name}
             className='w-[60%] h-[60%] object-contain'
           />
         </div>
-      }
-    >
-      <div>
-        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
-        <p
-          className='text-secondary text-[16px] font-semibold'
-          style={{ margin: 0 }}
-        >
-          {experience.company_name}
-        </p>
       </div>
 
-      <ul className='mt-5 list-disc ml-5 space-y-2'>
-        {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
-          >
-            {point}
-          </li>
-        ))}
-      </ul>
-    </VerticalTimelineElement>
+      <div className='bg-[#1d1836] rounded-2xl p-6 sm:p-8 flex-1 mb-8'>
+        <p className='sm:hidden text-secondary text-[13px] font-medium mb-3'>
+          {experience.date}
+        </p>
+        <h3 className='text-white text-[22px] font-bold'>{experience.title}</h3>
+        <p className='text-secondary text-[15px] font-semibold mt-1'>
+          {experience.company_name}
+        </p>
+
+        <ul className='mt-5 list-disc ml-5 space-y-2'>
+          {experience.points.map((point, i) => (
+            <li
+              key={`experience-point-${i}`}
+              className='text-white-100 text-[14px] pl-1 tracking-wider leading-relaxed'
+            >
+              {point}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </motion.div>
   );
 };
 
@@ -64,19 +65,18 @@ const Experience = () => {
           What I have done so far
         </p>
         <h2 className={`${styles.sectionHeadText} text-center`}>
-          Work Experience.
+          Work Experience
         </h2>
       </motion.div>
 
-      <div className='mt-20 flex flex-col'>
-        <VerticalTimeline>
-          {experiences.map((experience, index) => (
-            <ExperienceCard
-              key={`experience-${index}`}
-              experience={experience}
-            />
-          ))}
-        </VerticalTimeline>
+      <div className='mt-16 max-w-4xl mx-auto'>
+        {experiences.map((experience, index) => (
+          <ExperienceCard
+            key={`experience-${index}`}
+            experience={experience}
+            index={index}
+          />
+        ))}
       </div>
     </>
   );
