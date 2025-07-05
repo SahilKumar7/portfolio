@@ -1,9 +1,8 @@
 import React from "react";
-import Tilt from "react-tilt";
-import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
+import { motion } from "motion/react";
 
 import { styles } from "../styles";
-// import { github } from "../assets";
 import { play } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
@@ -18,38 +17,41 @@ const ProjectCard = ({
   source_code_link,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+      className='hover:-translate-y-2 transition-transform duration-300'
+    >
       <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
+        tiltMaxAngleX={45}
+        tiltMaxAngleY={45}
+        scale={1}
+        transitionSpeed={450}
+        className='bg-tertiary p-5 rounded-2xl w-full'
       >
         <div className='relative w-full h-[230px]'>
           <img
             src={image}
-            alt='project_image'
+            alt={name}
             className='w-full h-full object-cover rounded-2xl'
           />
 
-          { source_code_link &&
+          {source_code_link && (
             <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
-              <div
-                onClick={() => window.open(source_code_link, "_blank")}
-                className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+              <a
+                href={source_code_link}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='black-gradient w-10 h-10 rounded-full flex justify-center items-center'
+                aria-label={`View ${name} demo`}
               >
-                
-              <img
-                src={play}
-                alt='source code'
-                className='w-1/2 h-1/2 object-contain'
-              />
-              
-              </div>
+                <img
+                  src={play}
+                  alt=''
+                  className='w-1/2 h-1/2 object-contain'
+                />
+              </a>
             </div>
-          }
+          )}
         </div>
 
         <div className='mt-5'>
@@ -76,24 +78,21 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+        <p className={`${styles.sectionSubText} text-center`}>My work</p>
+        <h2 className={`${styles.sectionHeadText} text-center`}>Projects</h2>
       </motion.div>
 
-      <div className='w-full flex'>
+      <div className='w-full flex justify-center'>
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px] text-center'
         >
-          Following projects showcase my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to live demos in it. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
+          A mix of full-stack web applications and games built with Unity
+          and Godot. Each project links to a live demo or playable build.
         </motion.p>
       </div>
 
-      <div className='mt-20 flex flex-wrap gap-7'>
+      <div className='mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7'>
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

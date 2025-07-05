@@ -3,41 +3,36 @@ import backend from "./backend.png";
 import art from "./art.png";
 import gamedev from "./gamedev.png";
 import frontend from "./frontend.png";
-import github from "./github.png";
+
 import play from "./play.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
 
 import aws from "./tech/aws.png";
-import cpp from "./tech/c++.png";
-import css from "./tech/css.png";
+import blender from "./tech/blender.png";
 import docker from "./tech/docker.png";
-import flask from "./tech/flask.png";
+import fastapi from "./tech/fastapi.png";
 import git from "./tech/git.png";
 import godot from "./tech/godot.png";
-import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
+import jenkins from "./tech/jenkins.png";
+import jest from "./tech/jest.png";
+import linux from "./tech/linux.png";
 import mongodb from "./tech/mongodb.png";
+import nextjs from "./tech/nextjs.png";
 import nodejs from "./tech/nodejs.png";
 import postgresql from "./tech/postgresql.png";
+import pytest from "./tech/pytest.png";
 import python from "./tech/python.png";
 import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
+import redis from "./tech/redis.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.png";
 import unity from "./tech/unity.png";
+import krita from "./tech/krita.png";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
 import amdocs from "./company/amdocs.png";
-
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
 import tvshowsearch from "./tv_show_search.png";
 import spaceblaster from "./space_blaster.png";
 import spacebrawl from "./space_brawl.png";
@@ -50,37 +45,31 @@ export {
   art,
   gamedev,
   frontend,
-  github,
   menu,
   close,
-  css,
-  docker,
-  // figma,
-  git,
-  html,
   javascript,
-  mongodb,
-  nodejs,
-  reactjs,
-  redux,
-  tailwind,
   typescript,
-  threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
-  amdocs,
-  carrent,
-  jobit,
-  tripguide,
-  cpp,
-  aws,
-  godot,
-  unity,
-  flask,
+  reactjs,
+  nextjs,
+  tailwind,
   python,
+  fastapi,
+  nodejs,
   postgresql,
+  mongodb,
+  git,
+  docker,
+  jenkins,
+  aws,
+  redis,
+  linux,
+  jest,
+  pytest,
+  unity,
+  godot,
+  blender,
+  krita,
+  amdocs,
   play,
   tvshowsearch,
   spaceblaster,

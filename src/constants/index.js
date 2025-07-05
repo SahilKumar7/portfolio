@@ -5,28 +5,27 @@ import {
   frontend,
   javascript,
   typescript,
-  html,
-  css,
   reactjs,
-  redux,
+  nextjs,
   tailwind,
+  python,
+  fastapi,
   nodejs,
+  postgresql,
   mongodb,
   git,
   docker,
-  python,
-  flask,
-  postgresql,
-  cpp,
+  jenkins,
   aws,
-  godot,
+  redis,
+  linux,
+  jest,
+  pytest,
   unity,
+  godot,
+  blender,
+  krita,
   amdocs,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
-  github,
   tvshowsearch,
   spaceblaster,
   spacebrawl,
@@ -70,14 +69,6 @@ const services = [
 
 const technologies = [
   {
-    name: "HTML5",
-    icon: html,
-  },
-  {
-    name: "CSS3",
-    icon: css,
-  },
-  {
     name: "JavaScript",
     icon: javascript,
   },
@@ -86,44 +77,28 @@ const technologies = [
     icon: typescript,
   },
   {
-    name: "React JS",
+    name: "React",
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
+    name: "Next.js",
+    icon: nextjs,
   },
   {
-    name: "Tailwind CSS",
+    name: "Tailwind",
     icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
   },
   {
     name: "Python",
     icon: python,
   },
   {
-    name: "Flask",
-    icon: flask,
+    name: "FastAPI",
+    icon: fastapi,
   },
   {
-    name: "C++",
-    icon: cpp,
-  },
-  {
-    name: "Godot",
-    icon: godot,
-  },
-  {
-    name: "Unity",
-    icon: unity,
-  },
-  {
-    name: "AWS",
-    icon: aws,
+    name: "Node.js",
+    icon: nodejs,
   },
   {
     name: "PostgreSQL",
@@ -134,72 +109,56 @@ const technologies = [
     icon: mongodb,
   },
   {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
+    name: "Git",
     icon: git,
   },
   {
-    name: "docker",
+    name: "Docker",
     icon: docker,
+  },
+  {
+    name: "Jenkins",
+    icon: jenkins,
+  },
+  {
+    name: "AWS",
+    icon: aws,
+  },
+  {
+    name: "Redis",
+    icon: redis,
+  },
+  {
+    name: "Linux",
+    icon: linux,
+  },
+  {
+    name: "Jest",
+    icon: jest,
+  },
+  {
+    name: "Pytest",
+    icon: pytest,
+  },
+  {
+    name: "Unity",
+    icon: unity,
+  },
+  {
+    name: "Godot",
+    icon: godot,
+  },
+  {
+    name: "Blender",
+    icon: blender,
+  },
+  {
+    name: "Krita",
+    icon: krita,
   },
 ];
 
 const experiences = [
-  // {
-  //   title: "React.js Developer",
-  //   company_name: "Starbucks",
-  //   icon: starbucks,
-  //   iconBg: "#383E56",
-  //   date: "March 2020 - April 2021",
-  //   points: [
-  //     "Developing and maintaining frontend applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
-  // {
-  //   title: "React Native Developer",
-  //   company_name: "Tesla",
-  //   icon: tesla,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2021 - Feb 2022",
-  //   points: [
-  //     "Developing and maintaining frontend applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
-  // {
-  //   title: "Web Developer",
-  //   company_name: "Shopify",
-  //   icon: shopify,
-  //   iconBg: "#383E56",
-  //   date: "Jan 2022 - Jan 2023",
-  //   points: [
-  //     "Developing and maintaining frontend applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
-  // {
-  //   title: "Full stack Developer",
-  //   company_name: "Meta",
-  //   icon: meta,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2023 - Present",
-  //   points: [
-  //     "Developing and maintaining frontend applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
   {
     title: "Software Developer",
     company_name: "Amdocs",
@@ -207,108 +166,18 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "Aug 2023 - Present",
     points: [
-      "Developed and maintained frontend applications using React.js and TailwindCSS, improving user engagement by 15%",
-      "Collaborated with cross-functional teams including designers, product managers, and other developers to create high-quality products",
-      "Implemented responsive design and ensuring cross-browser compatibility",
-      "Led the modernization of a legacy Java + Spring Boot application by transitioning to a Python-based architecture, resulting in a 40% reduction in code complexity and maintenance overhead",
-      "Engineered automation scripts to ensure seamless data migration from the Java 6 application to the new Python system, achieving 100% data integrity during the transition",
-      "Developed Python scripts to automate manual data entry process for mobile recharge packs, reducing manual input errors by 95% and saving 22 hours per week for the team",
-      "Participated in code reviews and providing constructive feedback to other developers",
+      "Led design and development of a large-scale responsive web application using React 18, migrating a legacy Java Swing desktop app to browser-based access for 50+ internal users",
+      "Built reusable React component library (React Hook Form, TanStack Table) and implemented React Query for server state management, reducing new feature development time by 60% and API calls by 35%",
+      "Built interactive data visualization using React Flow and Recharts, reducing configuration errors by 25%",
+      "Designed and implemented scalable backend services using Python FastAPI with JWT authentication and Redis caching, reducing API response time by 40% and database queries by 35%",
+      "Migrated 150+ database entities from Java/Hibernate to SQLAlchemy 2.0 with async operations; created OpenAPI/Swagger documentation reducing frontend integration time by 50%",
+      "Set up CI/CD pipeline with Jenkins and Docker, reducing deployment time from 4 hours to 20 minutes; wrote unit and integration tests achieving 80%+ code coverage",
     ],
   },
 ];
 
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a frontend developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
-];
 
 const projects = [
-  // {
-  //   name: "Car Rent",
-  //   description:
-  //     "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-  //   tags: [
-  //     {
-  //       name: "react",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "mongodb",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "tailwind",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  //   image: carrent,
-  //   source_code_link: "https://github.com/",
-  // },
-  // {
-  //   name: "Job IT",
-  //   description:
-  //     "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-  //   tags: [
-  //     {
-  //       name: "react",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "restapi",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "scss",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  //   image: jobit,
-  //   source_code_link: "https://github.com/",
-  // },
-  // {
-  //   name: "Trip Guide",
-  //   description:
-  //     "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-  //   tags: [
-  //     {
-  //       name: "nextjs",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "supabase",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "css",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  //   image: tripguide,
-  //   source_code_link: "https://github.com/",
-  // },
   {
     name: "Estate Explorer",
     description:
@@ -348,7 +217,7 @@ const projects = [
       },
     ],
     image: proTrackr,
-    source_code_link: "https://sahilkumar7.github.io/ProTrackr/",
+    source_code_link: "https://xyz.github.io/ProTrackr/",
   },
   {
     name: "Space Brawl",
@@ -411,8 +280,8 @@ const projects = [
       },
     ],
     image: tvshowsearch,
-    source_code_link: "https://sahilkumar7.github.io/TV-Show-Search/",
+    source_code_link: "https://xyz.github.io/TV-Show-Search/",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, projects };
