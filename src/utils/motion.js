@@ -37,6 +37,42 @@ export const fadeIn = (direction, type, delay, duration) => {
   };
 };
 
+export const blurIn = (delay = 0, duration = 0.6) => ({
+  hidden: {
+    opacity: 0,
+    filter: "blur(10px)",
+    y: 20,
+  },
+  show: {
+    opacity: 1,
+    filter: "blur(0px)",
+    y: 0,
+    transition: {
+      type: "tween",
+      delay,
+      duration,
+      ease: "easeOut",
+    },
+  },
+});
+
+export const scaleReveal = (delay = 0, duration = 0.5) => ({
+  hidden: {
+    opacity: 0,
+    scale: 0.85,
+  },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "spring",
+      delay,
+      duration,
+      bounce: 0.2,
+    },
+  },
+});
+
 export const zoomIn = (delay, duration) => {
   return {
     hidden: {
@@ -80,9 +116,27 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: staggerChildren,
+        staggerChildren: staggerChildren || 0.1,
         delayChildren: delayChildren || 0,
       },
     },
   };
+};
+
+export const letterStagger = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.03,
+    },
+  },
+};
+
+export const letterChild = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", damping: 12, stiffness: 200 },
+  },
 };

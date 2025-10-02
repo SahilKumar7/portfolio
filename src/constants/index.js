@@ -67,95 +67,36 @@ const services = [
   },
 ];
 
+const techCategories = [
+  { id: "frontend", name: "Frontend", color: "#38bdf8" },
+  { id: "backend", name: "Backend", color: "#a855f7" },
+  { id: "devops", name: "DevOps & Tools", color: "#fb7185" },
+  { id: "creative", name: "Game Dev & Art", color: "#f59e0b" },
+];
+
 const technologies = [
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React",
-    icon: reactjs,
-  },
-  {
-    name: "Next.js",
-    icon: nextjs,
-  },
-  {
-    name: "Tailwind",
-    icon: tailwind,
-  },
-  {
-    name: "Python",
-    icon: python,
-  },
-  {
-    name: "FastAPI",
-    icon: fastapi,
-  },
-  {
-    name: "Node.js",
-    icon: nodejs,
-  },
-  {
-    name: "PostgreSQL",
-    icon: postgresql,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Git",
-    icon: git,
-  },
-  {
-    name: "Docker",
-    icon: docker,
-  },
-  {
-    name: "Jenkins",
-    icon: jenkins,
-  },
-  {
-    name: "AWS",
-    icon: aws,
-  },
-  {
-    name: "Redis",
-    icon: redis,
-  },
-  {
-    name: "Linux",
-    icon: linux,
-  },
-  {
-    name: "Jest",
-    icon: jest,
-  },
-  {
-    name: "Pytest",
-    icon: pytest,
-  },
-  {
-    name: "Unity",
-    icon: unity,
-  },
-  {
-    name: "Godot",
-    icon: godot,
-  },
-  {
-    name: "Blender",
-    icon: blender,
-  },
-  {
-    name: "Krita",
-    icon: krita,
-  },
+  { name: "JavaScript", icon: javascript, category: "frontend" },
+  { name: "TypeScript", icon: typescript, category: "frontend" },
+  { name: "React", icon: reactjs, category: "frontend" },
+  { name: "Next.js", icon: nextjs, category: "frontend" },
+  { name: "Tailwind", icon: tailwind, category: "frontend" },
+  { name: "Python", icon: python, category: "backend" },
+  { name: "FastAPI", icon: fastapi, category: "backend" },
+  { name: "Node.js", icon: nodejs, category: "backend" },
+  { name: "PostgreSQL", icon: postgresql, category: "backend" },
+  { name: "MongoDB", icon: mongodb, category: "backend" },
+  { name: "Git", icon: git, category: "devops" },
+  { name: "Docker", icon: docker, category: "devops" },
+  { name: "Jenkins", icon: jenkins, category: "devops" },
+  { name: "AWS", icon: aws, category: "devops" },
+  { name: "Redis", icon: redis, category: "devops" },
+  { name: "Linux", icon: linux, category: "devops" },
+  { name: "Jest", icon: jest, category: "devops" },
+  { name: "Pytest", icon: pytest, category: "devops" },
+  { name: "Unity", icon: unity, category: "creative" },
+  { name: "Godot", icon: godot, category: "creative" },
+  { name: "Blender", icon: blender, category: "creative" },
+  { name: "Krita", icon: krita, category: "creative" },
 ];
 
 const experiences = [
@@ -201,7 +142,7 @@ const projects = [
   },{
     name: "ProTrackr",
     description:
-      "A web app solution that allows users to efficiently track and manage project progress, tasks and deadlines.",
+      "A full-stack project management app for tracking tasks, deadlines, and team progress with real-time updates and a responsive dashboard.",
     tags: [
       {
         name: "reactjs",
@@ -264,18 +205,18 @@ const projects = [
   {
     name: "TV Show Search",
     description:
-      "An intuitive TV show and movie search platform that enables users to discover, explore, and track their favorite entertainment titles effortlessly.",
+      "A TV show discovery app built with Vue 3 and Vuetify. Features debounced search suggestions, recent search history, keyboard navigation, and request cancellation — powered by the TVmaze API.",
     tags: [
       {
-        name: "javascript",
+        name: "vue",
         color: "blue-text-gradient",
       },
       {
-        name: "axios",
+        name: "vuetify",
         color: "green-text-gradient",
       },
       {
-        name: "bulma",
+        name: "pinia",
         color: "pink-text-gradient",
       },
     ],
@@ -284,4 +225,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, projects };
+export { services, technologies, techCategories, experiences, projects };
