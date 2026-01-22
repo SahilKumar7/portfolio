@@ -403,6 +403,57 @@
   .orbit-spin {
     animation: orbitSpin linear infinite;
   }
+
+  /* ── Constellation tech map ────────────────────────── */
+
+  .constellation-node {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: default;
+    z-index: 1;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+  }
+
+  .constellation-node:hover {
+    z-index: 2;
+  }
+
+  .constellation-node:hover .constellation-node-icon {
+    box-shadow: 0 0 18px var(--glow-color), 0 0 50px rgba(255, 255, 255, 0.05);
+    border-color: var(--glow-color) !important;
+    transform: scale(1.12);
+  }
+
+  .constellation-node.dimmed {
+    opacity: 0.18;
+    filter: grayscale(0.5) brightness(0.7);
+  }
+
+  .constellation-node-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid;
+    background: rgba(12, 18, 34, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .constellation-node-label {
+    font-size: 10px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+  }
+
+  .constellation-line {
+    transition: opacity 0.4s ease;
+  }
 }
 
 /* ── Accessibility (outside layers — !important overrides all) ── */
