@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { technologies, techCategories } from "../constants";
-import { textVariant, scaleReveal } from "../utils/motion";
+import { textVariant, scaleReveal, blurIn } from "../utils/motion";
 
 const CLUSTER_CENTERS = {
   frontend: { cx: 0.22, cy: 0.24 },
@@ -155,6 +155,7 @@ const ConstellationLines = ({ lines, width, height, effectiveCat }) => (
   >
     {lines.map((line, i) => {
       const active = effectiveCat === "all" || effectiveCat === line.catId;
+      const len = Math.hypot(line.x2 - line.x1, line.y2 - line.y1);
       return (
         <line
           key={i}
@@ -163,14 +164,19 @@ const ConstellationLines = ({ lines, width, height, effectiveCat }) => (
           stroke={line.color}
           strokeWidth={1.2}
           className="constellation-line"
-          style={{ opacity: active ? 0.35 : 0.06 }}
+          style={{
+            opacity: active ? 0.35 : 0.06,
+            strokeDasharray: len,
+            strokeDashoffset: len,
+            animation: `constellation-draw 1.2s ease-out ${0.3 + i * 0.08}s forwards`,
+          }}
         />
       );
     })}
   </svg>
 );
 
-const TechNode = ({ tech, isActive, onHover, onLeave, delay }) => (
+const TechNode = ({ tech, isActive, onHover, onLeave, delay, index }) => (
   <motion.div
     className={`constellation-node${isActive ? "" : " dimmed"}`}
     style={{
@@ -180,6 +186,7 @@ const TechNode = ({ tech, isActive, onHover, onLeave, delay }) => (
       x: "-50%",
       y: "-40%",
       "--glow-color": tech.color,
+      "--float-delay": `${(index * 0.7) % 5}s`,
     }}
     variants={scaleReveal(delay, 0.5)}
     onMouseEnter={() => onHover(tech.catId)}
@@ -205,19 +212,23 @@ const TechNode = ({ tech, isActive, onHover, onLeave, delay }) => (
   </motion.div>
 );
 
+const LABEL_DELAYS = { frontend: 0.1, backend: 0.2, devops: 0.3, creative: 0.4 };
+
 const ClusterLabel = ({ label, isActive }) => (
-  <div
-    className="absolute pointer-events-none select-none text-[10px] font-semibold uppercase tracking-[0.15em] whitespace-nowrap transition-opacity duration-300"
+  <motion.div
+    className="absolute pointer-events-none select-none text-[10px] font-semibold uppercase tracking-[0.15em] whitespace-nowrap"
     style={{
       left: label.x,
       top: label.y,
       transform: "translate(-50%, -100%)",
       color: label.color,
-      opacity: isActive ? 0.7 : 0.15,
     }}
+    variants={blurIn(LABEL_DELAYS[label.catId] || 0.1, 0.7)}
+    animate={{ opacity: isActive ? 0.7 : 0.15 }}
+    transition={{ duration: 0.3 }}
   >
     {label.name}
-  </div>
+  </motion.div>
 );
 
 const Tech = () => {
@@ -347,8 +358,9 @@ const Tech = () => {
         </h2>
       </motion.div>
 
-      <div className="flex justify-center gap-2 mt-6 mb-2 flex-wrap">
-        <button
+      <div className="flex justify-center gap-2 mt-8 mb-4 flex-wrap">
+        <motion.button
+          whileTap={{ scale: 0.95 }}
           onClick={() => setActiveCategory("all")}
           className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-300 border ${
             activeCategory === "all"
@@ -357,10 +369,11 @@ const Tech = () => {
           }`}
         >
           All
-        </button>
+        </motion.button>
         {techCategories.map((cat) => (
-          <button
+          <motion.button
             key={cat.id}
+            whileTap={{ scale: 0.95 }}
             onClick={() => setActiveCategory(cat.id)}
             className="px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-300"
             style={{
@@ -373,13 +386,13 @@ const Tech = () => {
             }}
           >
             {cat.name}
-          </button>
+          </motion.button>
         ))}
       </div>
 
       <div
         ref={containerRef}
-        className="w-full h-[650px] relative overflow-hidden mt-2"
+        className="w-full h-[650px] relative overflow-hidden mt-4 mb-4"
         onMouseMove={handleMouseMove}
       >
         {size.w > 0 && (
@@ -414,6 +427,7 @@ const Tech = () => {
                 onHover={setHoveredCategory}
                 onLeave={() => setHoveredCategory(null)}
                 delay={i * 0.03}
+                index={i}
               />
             ))}
           </>

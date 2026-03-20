@@ -143,6 +143,20 @@
   to { transform: rotate(360deg); }
 }
 
+@keyframes constellation-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes constellation-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -4px; }
+}
+
+@keyframes icon-glow-pulse {
+  0%, 100% { box-shadow: 0 0 6px var(--glow-color, transparent); }
+  50% { box-shadow: 0 0 14px var(--glow-color, transparent), 0 0 30px rgba(255, 255, 255, 0.03); }
+}
+
 /* ── Base layer (resets + body — overridable by utilities) ── */
 
 @layer base {
@@ -415,6 +429,8 @@
     cursor: default;
     z-index: 1;
     transition: opacity 0.3s ease, filter 0.3s ease;
+    animation: constellation-float 5s ease-in-out infinite;
+    animation-delay: var(--float-delay, 0s);
   }
 
   .constellation-node:hover {
@@ -442,6 +458,8 @@
     align-items: center;
     justify-content: center;
     transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    animation: icon-glow-pulse 4s ease-in-out infinite;
+    animation-delay: var(--float-delay, 0s);
   }
 
   .constellation-node-label {
