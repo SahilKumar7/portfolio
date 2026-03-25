@@ -7,10 +7,10 @@ import { technologies, techCategories } from "../constants";
 import { textVariant, scaleReveal, blurIn } from "../utils/motion";
 
 const CLUSTER_CENTERS = {
-  frontend: { cx: 0.22, cy: 0.24 },
-  backend: { cx: 0.78, cy: 0.24 },
-  devops: { cx: 0.22, cy: 0.76 },
-  creative: { cx: 0.78, cy: 0.76 },
+  frontend: { cx: 0.22, cy: 0.26 },
+  backend: { cx: 0.78, cy: 0.26 },
+  devops: { cx: 0.22, cy: 0.74 },
+  creative: { cx: 0.78, cy: 0.74 },
 };
 
 const PARTICLE_COLORS = ["#38bdf8", "#a855f7", "#ffffff", "#fb7185"];
@@ -75,7 +75,7 @@ function computeLayout(width, height) {
       name: cat.name,
       color: cat.color,
       x: cx * width,
-      y: Math.max(10, minY - 34),
+      y: Math.max(10, minY - 58),
     });
   });
 
@@ -222,6 +222,7 @@ const ClusterLabel = ({ label, isActive }) => (
       top: label.y,
       transform: "translate(-50%, -100%)",
       color: label.color,
+      zIndex: 5,
     }}
     variants={blurIn(LABEL_DELAYS[label.catId] || 0.1, 0.7)}
     animate={{ opacity: isActive ? 0.7 : 0.15 }}
@@ -392,7 +393,7 @@ const Tech = () => {
 
       <div
         ref={containerRef}
-        className="w-full h-[650px] relative overflow-hidden mt-4 mb-4"
+        className="w-full h-[720px] relative overflow-hidden mt-4 mb-4"
         onMouseMove={handleMouseMove}
       >
         {size.w > 0 && (

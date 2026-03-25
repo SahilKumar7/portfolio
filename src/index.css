@@ -157,6 +157,11 @@
   50% { box-shadow: 0 0 14px var(--glow-color, transparent), 0 0 30px rgba(255, 255, 255, 0.03); }
 }
 
+@keyframes splash-node-appear {
+  from { opacity: 0; r: 0; }
+  to { opacity: 0.9; }
+}
+
 /* ── Base layer (resets + body — overridable by utilities) ── */
 
 @layer base {
