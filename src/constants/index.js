@@ -30,7 +30,7 @@ import {
   spaceblaster,
   spacebrawl,
   proTrackr,
-  uc
+  estateExplorer
 } from "../assets";
 
 export const navLinks = [
@@ -122,34 +122,34 @@ const projects = [
   {
     name: "Estate Explorer",
     description:
-      "A dynamic real estate platform that enables users to buy, sell, and rent properties while providing an intuitive interface for seamless property listings and inquiries.",
+      "A full-stack real estate platform with real-time chat, interactive maps, and property listings. Features a dark modern UI with Leaflet maps, Socket.IO messaging, and an async FastAPI backend.",
     tags: [
       {
         name: "reactjs",
         color: "blue-text-gradient",
       },
       {
-        name: "nodejs",
+        name: "fastapi",
         color: "green-text-gradient",
       },
       {
-        name: "expressjs",
+        name: "postgresql",
         color: "pink-text-gradient",
       },
     ],
-    image: uc,
+    image: estateExplorer,
     source_code_link: "",
   },{
     name: "ProTrackr",
     description:
-      "A full-stack project management app for tracking tasks, deadlines, and team progress with real-time updates and a responsive dashboard.",
+      "A client-side task management app with drag-and-drop reordering, project organization, dark mode, and offline persistence. Built with React 19, Zustand, and Tailwind v4 — no backend required.",
     tags: [
       {
         name: "reactjs",
         color: "blue-text-gradient",
       },
       {
-        name: "expressjs",
+        name: "zustand",
         color: "green-text-gradient",
       },
       {

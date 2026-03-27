@@ -37,7 +37,7 @@ import tvshowsearch from "./tv_show_search.png";
 import spaceblaster from "./space_blaster.png";
 import spacebrawl from "./space_brawl.png";
 import proTrackr from "./protrackr.png";
-import uc from "./uc.png";
+import estateExplorer from "./estate_explorer.png";
 
 export {
   logo,
@@ -75,5 +75,5 @@ export {
   spaceblaster,
   spacebrawl,
   proTrackr,
-  uc,
+  estateExplorer,
 };
