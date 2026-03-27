@@ -73,7 +73,7 @@ const Contact = () => {
                     ),
                   },
                   {
-                    href: "https://linkedin.com/in/sahilkumar7",
+                    href: "https://linkedin.com/in/sahil-kumar7",
                     label: "LinkedIn",
                     color: "#a855f7",
                     icon: (

@@ -40,7 +40,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://linkedin.com/in/sahilkumar7"
+              href="https://linkedin.com/in/sahil-kumar7"
               target="_blank"
               rel="noopener noreferrer"
               className="text-secondary/50 hover:text-accent-violet transition-colors"
